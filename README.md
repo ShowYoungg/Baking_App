@@ -3,20 +3,9 @@ Backing App created as a part of Udacity [Android Developer Nanodegree Program](
 ![Screen](https://raw.githubusercontent.com/djkovrik/BakingApp/master/images/poster.jpg)
 
 ## Used Libraries
-* [RxJava 2](https://github.com/ReactiveX/RxJava), [RxAndroid](https://github.com/ReactiveX/RxAndroid), [RxJava2Interop](https://github.com/akarnokd/RxJava2Interop)
-* [Dagger 2](https://github.com/google/dagger)
-* [Retrofit 2](https://github.com/square/retrofit) with [RxJava adapter](https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2) and [Gson converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson)
-* [OkHttp](https://github.com/square/okhttp)
-* [Retrolambda](https://github.com/evant/gradle-retrolambda)
-* [ButterKnife](https://github.com/JakeWharton/butterknife)
+* [Retrofit 2](https://github.com/square/retrofit) and 
+*[Gson converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson)
 * [Gson](https://github.com/google/gson)
-* [AutoValue](https://github.com/google/auto) with [Gson extension](https://github.com/rharter/auto-value-gson)
-* [SqlBrite](https://github.com/square/sqlbrite)
-* [Glide](https://github.com/bumptech/glide)
-* [Material Values](https://github.com/AoDevBlue/MaterialValues)
-* [Stetho](https://github.com/facebook/stetho)
-* [LeakCanary](https://github.com/square/leakcanary)
-* [Timber](https://github.com/JakeWharton/timber)
 * [ExoPlayer](https://github.com/google/ExoPlayer)
 
 ## Project Overview
