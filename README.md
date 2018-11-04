@@ -1,6 +1,5 @@
 Backing App created as a part of Udacity [Android Developer Nanodegree Program](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801).
 
-![Screen](https://raw.githubusercontent.com/djkovrik/BakingApp/master/images/poster.jpg)
 
 ## Used Libraries
 * [Retrofit 2](https://github.com/square/retrofit) and 
