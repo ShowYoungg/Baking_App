@@ -60,7 +60,7 @@ public class IntentTest {
     public void checkIfIntentStarts_RecipeDetailFragment() {
         //Scroll to the first item in the recycler view and perform click action
         onView(ViewMatchers.withId(R.id.recipe_recycler_view))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(3,click()));
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
         //Check to see if the intent launches RecipeDetailFragment
         intended(hasComponent(RecipeDetailFragment.class.getName()));
     }
@@ -73,5 +73,4 @@ public class IntentTest {
             Espresso.unregisterIdlingResources(idlingResource);
         }
     }
-
 }

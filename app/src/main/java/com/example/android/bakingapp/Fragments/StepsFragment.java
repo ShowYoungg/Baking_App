@@ -33,6 +33,7 @@ import com.example.android.bakingapp.Model.ImageAndRecipe;
 import com.example.android.bakingapp.R;
 import com.example.android.bakingapp.Model.Recipe;
 import com.example.android.bakingapp.Model.Step;
+import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
@@ -75,6 +76,8 @@ public class StepsFragment extends Fragment {
     private boolean writtenToDisk;
     private int stepId;
     private int i;
+    private long playerPosition = -100;
+    private boolean playWhenReady = true;
     private Uri SAMPLE;
     private boolean mLandscape;
     private long fileSize;
@@ -180,7 +183,9 @@ public class StepsFragment extends Fragment {
         });
 
         if (savedInstanceState != null){
+
             if (stepDetailPreferences != null){
+
                 description = stepDetailPreferences.getString("Description", description);
                 textView.setText(description);
                 streamingUrlLink = stepDetailPreferences.getString("StreamingLink", streamingUrlLink);
@@ -288,7 +293,6 @@ public class StepsFragment extends Fragment {
         getSavedJson();
         downloadAndSaveVideo();
         navigation.setOnNavigationItemSelectedListener(getmOnNavigationItemSelectedListener());
-
         return rootView;
     }
 
@@ -307,7 +311,7 @@ public class StepsFragment extends Fragment {
         int fileSize = Integer.parseInt(String.valueOf(file.length()/1024));
 
         if (!file.exists()){
-            if (streamingUrlLink != null && !streamingUrlLink.equals("")) {
+            if (streamingUrlLink != null && !streamingUrlLink.equals("") && step != null) {
                 if (isNetworkAvailable()) {
                     // This method initialises broadcast receiver that start the DownloadService class
                     registerReceiver();
@@ -325,8 +329,21 @@ public class StepsFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        //This is where ExoPlayer starts
-        initialiseAndPlayVideo();
+
+        if (Util.SDK_INT > 23){
+            //This is where ExoPlayer starts if SDK is greater than 23
+            initialiseAndPlayVideo();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        //This is where ExoPlayer starts if SDK is equals to or greater than 23
+        if (Util.SDK_INT <= 23 || player != null){
+            initialiseAndPlayVideo();
+        }
     }
 
     /**
@@ -347,6 +364,12 @@ public class StepsFragment extends Fragment {
             }
         }
 
+        if (stepDetailPreferences != null){
+            playerPosition = stepDetailPreferences.getLong("MEDIA_POSITION", C.TIME_UNSET);
+            playWhenReady = stepDetailPreferences.getBoolean("PLAY_WHEN_READY", true);
+            Toast.makeText(getContext(), "" + playerPosition  + playWhenReady, Toast.LENGTH_SHORT).show();
+        }
+
         player = ExoPlayerFactory.newSimpleInstance( getContext(), new DefaultTrackSelector());
         playerView.setPlayer(player);
         playerView.setResizeMode(AspectRatioFrameLayout.RESIZE_MODE_FIT);
@@ -357,9 +380,44 @@ public class StepsFragment extends Fragment {
 
         ExtractorMediaSource mediaSource = new ExtractorMediaSource.Factory(dataSourceFactory)
                 .createMediaSource(SAMPLE);
+
         player.prepare(mediaSource);
-        player.setPlayWhenReady(true);
+
+        if (playerPosition > 0 && playerPosition != C.TIME_UNSET ){
+            Toast.makeText(getContext(), "yes", Toast.LENGTH_SHORT).show();
+            player.seekTo(playerPosition);
+            player.setPlayWhenReady(playWhenReady);
+        } else {
+            player.setPlayWhenReady(playWhenReady);
+        }
     }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        if (player != null){
+            playerPosition = player.getCurrentPosition();
+            playWhenReady = player.getPlayWhenReady();
+        }
+
+        SharedPreferences.Editor editor = stepDetailPreferences.edit();
+        editor.putString("Description", description);
+        editor.putString("StreamingLink", streamingUrlLink);
+        editor.putString("RecipeName", recipeName);
+        editor.putInt("StepId", stepId);
+        editor.putLong("MEDIA_POSITION", playerPosition);
+        editor.putBoolean("PLAY_WHEN_READY", playWhenReady);
+        editor.commit();
+
+        if (Util.SDK_INT <= 23){
+            playerView.setPlayer(null);
+            player.release();
+            player = null;
+        }
+    }
+
 
 
     /**
@@ -369,17 +427,12 @@ public class StepsFragment extends Fragment {
     public void onStop() {
         super.onStop();
 
-        SharedPreferences.Editor editor = stepDetailPreferences.edit();
-        editor.putString("Description", description);
-        editor.putString("StreamingLink", streamingUrlLink);
-        editor.putString("RecipeName", recipeName);
-        editor.putInt("StepId", stepId);
-        editor.commit();
-
-
-        playerView.setPlayer(null);
-        player.release();
-        player = null;
+        if (Util.SDK_INT > 23){
+            playerPosition = player.getCurrentPosition();
+            playerView.setPlayer(null);
+            player.release();
+            player = null;
+        }
     }
 
 
