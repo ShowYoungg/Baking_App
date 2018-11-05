@@ -5,6 +5,7 @@ Baking App a part of Udacity [Android Developer Nanodegree Program](https://www.
 ![Phone](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-11-22.png) ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-03-22-55-13.png)
 ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-14.png)
 ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-30.png)
+![Screen] (https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-03-22-54-54.png)
 
 ## Used Libraries
 * [Retrofit 2](https://github.com/square/retrofit) and 
@@ -13,17 +14,17 @@ Baking App a part of Udacity [Android Developer Nanodegree Program](https://www.
 * [ExoPlayer](https://github.com/google/ExoPlayer)
 
 ## Project Overview
-You will productionize an app, taking it from a functional state to a production-ready state. This will involve finding and handling error cases, adding accessibility features, allowing for localization, adding a widget, and adding a library.
+I did productionize an app, taking it from a no state to a production-ready state. This involves finding and handling error cases, adding accessibility features, allowing for localization, adding a widget, and adding a library.
 
 ## Why this Project?
 As a working Android developer, you often have to create and implement apps where you are responsible for designing and planning the steps you need to take to create a production-ready app. Unlike Popular Movies where we gave you an implementation guide, it will be up to you to figure things out for the Baking App.
 
-## What Will I Learn?
-In this project you will:
+## What I Learned
+In this project I did:
 * Use MediaPlayer/Exoplayer to display videos.
 * Handle error cases in Android.
-* Add a widget to your app experience.
-* Leverage a third-party library in your app.
+* Add a widget to the app experience.
+* Leverage a third-party library in the app.
 * Use Fragments to create a responsive design that works on phones and tablets.
 
 ## Rubric
