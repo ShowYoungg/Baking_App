@@ -1,6 +1,7 @@
 ## Baking App
 Baking App a part of Udacity [Android Developer Nanodegree Program](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801).
 ![Phone](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-11-22.png)
+![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-14.png)
 
 
 ## Used Libraries
