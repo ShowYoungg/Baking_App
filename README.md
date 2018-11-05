@@ -1,11 +1,12 @@
 ## Baking App
-Baking App a part of Udacity [Android Developer Nanodegree Program](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801).
+Baking App is the fourth project of Udacity [Android Developer Nanodegree Program](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801).
 
+## Screenshots
 ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-11-02.png)
 ![Phone](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-11-22.png) ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-03-22-55-13.png)
 ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-14.png)
 ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-30.png)
-![Screen] (https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-03-22-54-54.png)
+![Image] (https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-03-22-54-54.png)
 
 ## Used Libraries
 * [Retrofit 2](https://github.com/square/retrofit) and 
@@ -21,6 +22,7 @@ As a working Android developer, you often have to create and implement apps wher
 
 ## What I Learned
 In this project I did:
+* Use RecyclerView inside a RecyclerView
 * Use MediaPlayer/Exoplayer to display videos.
 * Handle error cases in Android.
 * Add a widget to the app experience.
