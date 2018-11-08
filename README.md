@@ -5,8 +5,7 @@ Baking App is the fourth project of Udacity [Android Developer Nanodegree Progra
 ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-11-02.png)
 ![Phone](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-11-22.png)
 ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-03-22-55-13.png)
-![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-14.png)
-![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-30.pngpng)
+![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-14.png)![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-04-10-10-30.png)
 ![Screen](https://github.com/ShowYoungg/Baking_App/blob/master/Screenshot_2018-11-03-22-54-54.png)
 
 ## Used Libraries
