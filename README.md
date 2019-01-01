@@ -47,4 +47,4 @@ In this project I did:
 
 ### Homescreen Widget
 - [x] Application has a companion homescreen widget.
-- [x] Widget displays ingredient list for desired recipe 
+- [x] Widget displays ingredient list for desired recipe.
